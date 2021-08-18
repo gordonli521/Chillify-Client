@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Application } from "../App";
 import logo from "../logo4.png";
 import Loading from "./loading";
+import { API_URL, APP_URL } from "../url";
 
 const LoginPage = ({ setLoginSuccess, setError, error }) => {
   const { setShowPlaybar } = useContext(Application);
@@ -23,7 +24,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
 
   const fetchLoginInfo = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/auth/login`, {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +88,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
     setTimeout(() => {
       const fetchDemoLoginInfo = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/auth/login`, {
+          const response = await fetch(`${API_URL}/auth/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -117,7 +118,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
   useEffect(() => {
     setLoading(true);
     if (localStorage.getItem("token")) {
-      window.location = "http://localhost:3000/home";
+      window.location = `${APP_URL}/home`;
     }
     setShowPlaybar(false);
     setError("");

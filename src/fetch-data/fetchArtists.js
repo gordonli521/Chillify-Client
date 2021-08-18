@@ -1,6 +1,8 @@
+import { API_URL } from "../url";
+
 const fetchArtists = async () => {
   try {
-    const response = await fetch("http://localhost:5000/artists", {
+    const response = await fetch(`${API_URL}/artists`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

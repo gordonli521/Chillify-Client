@@ -4,6 +4,7 @@ import { Application } from "../App";
 import { useContext, useState, useEffect } from "react";
 import logo from "../logo4.png";
 import Loading from "./loading";
+import { APP_URL } from "../url";
 
 const MainPage = () => {
   const { setShowPlaybar } = useContext(Application);
@@ -12,7 +13,7 @@ const MainPage = () => {
   useEffect(() => {
     setLoading(true);
     if (localStorage.getItem("token")) {
-      window.location = "http://localhost:3000/home";
+      window.location = `${APP_URL}/home`;
     }
     setShowPlaybar(false);
     setLoading(false);

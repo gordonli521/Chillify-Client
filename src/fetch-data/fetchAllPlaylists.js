@@ -1,6 +1,8 @@
+import { API_URL } from "../url";
+
 const fetchAllPlaylists = async () => {
   try {
-    const response = await fetch(`http://localhost:5000/playlists`, {
+    const response = await fetch(`${API_URL}/playlists`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

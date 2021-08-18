@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Application } from "../App";
 import logo from "../logo4.png";
 import Loading from "./loading";
+import { API_URL, APP_URL } from "../url";
 
 const RegisterPage = ({ setRegisterSuccess }) => {
   const { setShowPlaybar } = useContext(Application);
@@ -35,7 +36,7 @@ const RegisterPage = ({ setRegisterSuccess }) => {
 
   const fetchRegisterInfo = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/users/register`, {
+      const response = await fetch(`${API_URL}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +67,7 @@ const RegisterPage = ({ setRegisterSuccess }) => {
   useEffect(() => {
     setLoading(true);
     if (localStorage.getItem("token")) {
-      window.location = "http://localhost:3000/home";
+      window.location = `${APP_URL}/home`;
     }
     setShowPlaybar(false);
     setError("");

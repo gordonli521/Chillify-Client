@@ -4,6 +4,7 @@ import { AiOutlineUser, AiOutlineCaretDown } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
+import { APP_URL } from "../url";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location = "http://localhost:3000/login";
+    window.location = `${APP_URL}/login`;
   };
 
   useEffect(() => {

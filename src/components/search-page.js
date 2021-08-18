@@ -21,6 +21,7 @@ import {
   ADD_SONG_TO_HISTORY,
   SET_HISTORY_INDEX,
 } from "../actions/types";
+import { API_URL } from "../url";
 
 const SearchPage = () => {
   const { state, dispatch, checkJwtToken, fetchFavorites, setShowPlaybar } =
@@ -40,7 +41,7 @@ const SearchPage = () => {
 
   const fetchArtists = async () => {
     try {
-      const response = await fetch("http://localhost:5000/artists", {
+      const response = await fetch(`${API_URL}/artists`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +66,7 @@ const SearchPage = () => {
 
   const fetchSongs = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/songs`, {
+      const response = await fetch(`${API_URL}/songs`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +91,7 @@ const SearchPage = () => {
 
   const fetchPlaylists = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/playlists`, {
+      const response = await fetch(`${API_URL}/playlists`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -1,6 +1,8 @@
+import { API_URL } from "../url";
+
 const fetchAuthUser = async () => {
   try {
-    const response = await fetch("http://localhost:5000/auth/user", {
+    const response = await fetch(`${API_URL}/auth/user`, {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem("token"),

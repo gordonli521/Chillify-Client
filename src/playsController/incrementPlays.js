@@ -1,6 +1,8 @@
+import { API_URL } from "../url";
+
 const incrementPlays = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5000/songs/${id}`, {
+    const response = await fetch(`${API_URL}/songs/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

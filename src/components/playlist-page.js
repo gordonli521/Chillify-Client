@@ -20,6 +20,7 @@ import {
   SET_HISTORY_INDEX,
 } from "../actions/types";
 import { Application } from "../App";
+import { API_URL } from "../url";
 
 const PlaylistPage = () => {
   const {
@@ -45,7 +46,7 @@ const PlaylistPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/artists/${name}/playlist/${title}`,
+        `${API_URL}/artists/${name}/playlist/${title}`,
         {
           method: "GET",
           headers: {

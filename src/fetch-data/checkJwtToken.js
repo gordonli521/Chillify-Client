@@ -1,6 +1,8 @@
+import { API_URL, APP_URL } from "../url";
+
 const checkJwtToken = async () => {
   try {
-    const response = await fetch("http://localhost:5000/auth/user", {
+    const response = await fetch(`${API_URL}/auth/user`, {
       method: "GET",
       headers: {
         "x-auth-token": localStorage.getItem("token"),
@@ -9,7 +11,7 @@ const checkJwtToken = async () => {
     const data = await response.json();
     if (data.msg === "token is not valid") {
       localStorage.removeItem("token");
-      window.location = "http://localhost:3000/login";
+      window.location = `${APP_URL}/login`;
     }
   } catch (err) {
     console.log(err);

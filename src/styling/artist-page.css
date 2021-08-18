@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.artist h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.artist {
+  margin-left: 230px;
+  margin-top: 66px;
+  color: white;
+  padding-bottom: 70px;
+}
+
+.artist-name {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.artist-name-container,
+.artist-pic-container {
+  display: flex;
+}
+
+.playlists-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlist-ele {
+  display: flex;
+}
+
+.artist-name:hover {
+  text-decoration: underline;
+}
+
+.playlist-img {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.artist .artist-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  margin-top: 40px;
+}
+
+.albums h2,
+.popular h2 {
+  font-size: 2.5rem;
+}
+
+.song-amount {
+  display: flex;
+  color: #999;
+}
+
+.artist-pic-and-name-2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  transition: background-color 150ms linear;
+}
+
+.song-title,
+.song-second-part {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+  max-width: 100%;
+}

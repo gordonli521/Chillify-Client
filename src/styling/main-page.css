@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-logo {
+  display: flex;
+  width: 170px;
+  height: 170px;
+  margin: 20px;
+}
+
+.website-title h1 {
+  display: flex;
+  color: white;
+  font-size: 7rem;
+  margin-bottom: 0px;
+}
+
+.description,
+.login-description {
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-description p {
+  margin-bottom: 3px;
+}
+
+.description {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.login-description {
+  font-size: 1rem;
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.text {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 5px 20px;
+  background: linear-gradient(0.25turn, rgb(30, 210, 240), rgb(30, 240, 120));
+}

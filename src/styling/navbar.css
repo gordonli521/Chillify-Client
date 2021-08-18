@@ -1,0 +1,127 @@
+.navbar {
+  display: flex;
+  color: white;
+  position: absolute;
+  top: 0;
+  /* right: 0px; */
+  /* width: 100%; */
+  /* width: fit-content; */
+  /* border: 1px solid red; */
+  width: calc(100% - 210px);
+  /* border: 1px solid blue; */
+
+  z-index: 101;
+}
+
+.darken {
+  background-color: black;
+}
+
+.right-nav {
+  /* height: 300px; */
+  display: flex;
+  position: fixed;
+  right: 0;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid red; */
+  /* flex: 1; */
+  height: 50px;
+  width: calc(100% - 210px);
+  transition: all 0.3s linear;
+}
+
+.nav-modal {
+  display: flex;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  margin-top: 70px;
+  margin-right: 10px;
+  padding: 3px;
+  height: fit-content;
+  background-color: rgb(55, 55, 55);
+  border-radius: 3px;
+}
+
+.log-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  width: 150px;
+  height: 25px;
+  border-radius: 3px;
+  padding: 5px 0px;
+}
+
+.log-out:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.nav-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+  border-radius: 15px;
+  height: fit-content;
+  font-size: medium;
+  background-color: black;
+  cursor: pointer;
+}
+
+.nav-btn-container:hover,
+.clicked {
+  background-color: rgb(55, 55, 55);
+}
+
+.user-pic,
+.user-name,
+.dropdown-arrow {
+  display: flex;
+  align-items: center;
+  margin: 2px;
+}
+
+.dropdown-arrow {
+  margin-top: 5px;
+  margin-right: 8px;
+  font-size: small;
+}
+
+.user-pic {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(55, 55, 55);
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+  border-radius: 14px;
+}
+
+.user-name {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+}
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  padding-right: 2px;
+  background-color: black;
+  border-radius: 15px;
+  cursor: pointer;
+}

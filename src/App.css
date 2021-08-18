@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(27, 27, 27);
+  padding-bottom: 70px;
+  user-select: none;
+  overscroll-behavior-y: none;
+}
+
+.isFavorited {
+  color: white;
+}
+
+.notFavorited {
+  color: #999;
+}
+
+.notFavorited:hover {
+  color: white;
+}

@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.register-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.register-container {
+  margin-top: 30px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.login-title {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+}
+
+.signup-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-message p {
+  color: #999;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(39, 39, 39);
+  border-radius: 10px;
+  padding: 20px 40px;
+}
+
+label {
+  display: flex;
+  color: #999;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.register-container .password,
+.name,
+.email {
+  margin-bottom: 10px;
+}
+
+.login-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-text {
+  display: flex;
+  color: #999;
+  font-weight: 900;
+  font-size: 15px;
+  padding-top: 20px;
+  padding: 10px 5px;
+}
+
+.register-login-link {
+  color: #999;
+  text-decoration: underline;
+}
+
+.register-login-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.submit-button {
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5px 20px;
+  margin-top: 10px;
+  background: linear-gradient(0.25turn, rgb(30, 210, 240), rgb(30, 240, 120));
+}

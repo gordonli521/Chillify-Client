@@ -139,7 +139,14 @@ const SearchPage = () => {
       audio.pause();
       dispatch({ type: SONG_PAUSED });
     } else if (!state.isPlaying && song._id === state.id) {
-      audio.play();
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {})
+          .catch((err) => {
+            console.log(err);
+          });
+      }
       dispatch({ type: SONG_PLAYED });
     } else {
       audio.src = `https://docs.google.com/uc?export=download&id=${split[5]}`;

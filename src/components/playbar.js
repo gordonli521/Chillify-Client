@@ -47,7 +47,18 @@ const Playbar = () => {
         audio.pause();
         dispatch({ type: SONG_PAUSED });
       } else {
-        audio.play();
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {})
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+        dispatch({
+          type: CHANGE_TIME,
+          payload: { currentTime: audio.currentTime },
+        });
         dispatch({ type: SONG_PLAYED });
       }
     }
@@ -204,6 +215,7 @@ const Playbar = () => {
       // Create moving progress bar
       const updateProgress = (e) => {
         const { currentTime, duration } = e.target;
+        console.log(currentTime, "current time", state.currTime, "state time");
 
         if (progress && !state.isSeek && !state.progressMouseDown) {
           const progressPercent = (currentTime / duration) * 100;
@@ -455,6 +467,7 @@ const Playbar = () => {
           state.isPlaying &&
           !state.progressMouseDown
         ) {
+          console.log(state.currTime, "state time 2");
           dispatch({ type: INCREMENT_TIME });
         } else if (
           state.currTime === state.duration &&

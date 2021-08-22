@@ -131,13 +131,7 @@ const PlaylistPage = () => {
       setLoading(false);
     };
     wait();
-  }, [
-    checkJwtToken,
-    fetchAllSongs,
-    fetchFavorites,
-    fetchPlaylist,
-    setShowPlaybar,
-  ]);
+  }, []);
 
   return loading ? (
     <Loading />

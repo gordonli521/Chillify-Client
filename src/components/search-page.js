@@ -198,14 +198,13 @@ const SearchPage = () => {
   useEffect(() => {
     const wait = async () => {
       await checkJwtToken();
-      setShowPlaybar(true);
-      await fetchArtists();
-      await fetchSongs();
-      await fetchPlaylists();
       let favorites = await fetchFavorites();
       setUserFavorites(favorites);
     };
     wait();
+    fetchArtists();
+    fetchSongs();
+    fetchPlaylists();
   }, [searchTerm]);
 
   useEffect(() => {

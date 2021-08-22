@@ -1,10 +1,6 @@
 import "semantic-ui-css/semantic.min.css";
 import "../styling/search-navbar.css";
-import {
-  AiOutlineUser,
-  AiOutlineCaretDown,
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
@@ -14,7 +10,6 @@ import { APP_URL } from "../url";
 const SearchNavbar = ({ searchTerm, setSearchTerm, handleSubmit }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const [name, setName] = useState("");
   const history = useHistory();
 
   const handleButton = (e) => {
@@ -35,9 +30,6 @@ const SearchNavbar = ({ searchTerm, setSearchTerm, handleSubmit }) => {
   };
 
   useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem("user"));
-    setName(userInfo.name);
-
     document.body.addEventListener("click", closeModal);
     const rightNav = document.querySelector(".right-nav");
     window.addEventListener("scroll", () => {

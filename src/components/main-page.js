@@ -17,7 +17,7 @@ const MainPage = () => {
     }
     setShowPlaybar(false);
     setLoading(false);
-  }, []);
+  }, [setShowPlaybar]);
 
   return loading ? (
     <Loading />

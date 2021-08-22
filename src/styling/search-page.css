@@ -30,6 +30,7 @@
 .filtered-songs-container,
 .filtered-playlists-container {
   margin-bottom: 20px;
+  display: none;
 }
 
 .no-results {

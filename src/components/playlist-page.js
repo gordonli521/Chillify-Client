@@ -26,7 +26,6 @@ const PlaylistPage = () => {
   const {
     state,
     dispatch,
-    userInfo,
     checkJwtToken,
     fetchFavorites,
     fetchAllSongs,
@@ -132,7 +131,13 @@ const PlaylistPage = () => {
       setLoading(false);
     };
     wait();
-  }, []);
+  }, [
+    checkJwtToken,
+    fetchAllSongs,
+    fetchFavorites,
+    fetchPlaylist,
+    setShowPlaybar,
+  ]);
 
   return loading ? (
     <Loading />
@@ -142,7 +147,7 @@ const PlaylistPage = () => {
       <Sidebar />
       <div className="playlist-page-container">
         <div className="playlist-info">
-          <img src={image} />
+          <img src={image} alt="playlist" />
           <div className="playlist-text">
             <div className="playlist-text-top">
               <h5>ALBUM</h5>

@@ -72,7 +72,7 @@ const RegisterPage = ({ setRegisterSuccess }) => {
     setShowPlaybar(false);
     setError("");
     setLoading(false);
-  }, []);
+  }, [setShowPlaybar]);
 
   return loading ? (
     <Loading />

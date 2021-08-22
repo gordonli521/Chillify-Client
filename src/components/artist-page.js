@@ -140,7 +140,15 @@ const ArtistPage = () => {
       setLoading(false);
     };
     wait();
-  }, []);
+  }, [
+    checkJwtToken,
+    fetchAllSongs,
+    fetchArtistPlaylists,
+    fetchFavorites,
+    fetchSingleArtist,
+    name,
+    setShowPlaybar,
+  ]);
 
   useEffect(() => {
     if (artist) {
@@ -177,6 +185,8 @@ const ArtistPage = () => {
       let filtered = await playlists.filter((playlist) => {
         if (playlist.songs.includes(state.id)) {
           return playlist;
+        } else {
+          return false;
         }
       });
       if (filtered.length > 0) {
@@ -191,7 +201,7 @@ const ArtistPage = () => {
       }
     };
     wait();
-  }, [state.playlist]);
+  }, [state.playlists]);
 
   return loading ? (
     <Loading />

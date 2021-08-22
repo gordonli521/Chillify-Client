@@ -123,7 +123,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
     setShowPlaybar(false);
     setError("");
     setLoading(false);
-  }, []);
+  }, [setError, setShowPlaybar]);
 
   return loading ? (
     <Loading />

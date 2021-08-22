@@ -19,7 +19,6 @@ import {
   RESET_HISTORY_INDEX,
   ADD_SONG_TO_HISTORY,
   SET_HISTORY_INDEX,
-  CLEAR_SONG,
 } from "../actions/types";
 
 const FavoritesPage = () => {
@@ -127,14 +126,20 @@ const FavoritesPage = () => {
       setLoading(false);
     };
     wait();
-  }, []);
+  }, [
+    checkJwtToken,
+    fetchFavorites,
+    fetchAllSongs,
+    fetchAllPlaylists,
+    setShowPlaybar,
+  ]);
 
   useEffect(() => {
     let filteredSongs = songs.filter((song) => {
       if (userFavorites.includes(song._id)) {
         return song;
       }
-      return;
+      return false;
     });
     setFavoriteSongs(filteredSongs);
 
@@ -142,7 +147,7 @@ const FavoritesPage = () => {
       if (userFavorites.includes(playlist._id)) {
         return playlist;
       }
-      return;
+      return false;
     });
     setFavoritePlaylists(filteredPlaylists);
   }, [songs, playlists, userFavorites]);
@@ -154,7 +159,7 @@ const FavoritesPage = () => {
         if (playlist.songs.includes(state.id)) {
           return playlist;
         }
-        return;
+        return false;
       });
       if (filtered.length > 0) {
         dispatch({

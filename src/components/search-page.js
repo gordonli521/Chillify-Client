@@ -139,14 +139,7 @@ const SearchPage = () => {
       audio.pause();
       dispatch({ type: SONG_PAUSED });
     } else if (!state.isPlaying && song._id === state.id) {
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {})
-          .catch((err) => {
-            console.log(err);
-          });
-      }
+      audio.play();
       dispatch({ type: SONG_PLAYED });
     } else {
       audio.src = `https://docs.google.com/uc?export=download&id=${split[5]}`;
@@ -270,7 +263,8 @@ const SearchPage = () => {
       />
       <Sidebar />
       <div className="search-page-container">
-        {artists.length === 0 &&
+        {searchTerm.length !== 0 &&
+        artists.length === 0 &&
         songs.length === 0 &&
         playlists.length === 0 ? (
           <div className="no-results">

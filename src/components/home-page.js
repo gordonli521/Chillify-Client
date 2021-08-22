@@ -56,7 +56,7 @@ const HomePage = () => {
       setLoading(false);
     };
     wait();
-  }, []);
+  }, [checkJwtToken, fetchAllPlaylists, fetchArtists, setShowPlaybar]);
 
   return loading ? (
     <Loading />

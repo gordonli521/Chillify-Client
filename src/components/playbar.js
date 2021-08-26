@@ -40,6 +40,14 @@ const Playbar = () => {
   let audio;
   const { state, dispatch } = useContext(Application);
 
+  const timeConvert = () => {
+    let split = state.currTime.split(":");
+    let minutes = parseInt(split[0], 10) * 60;
+    let seconds = parseInt(split[1], 10);
+    let time = minutes + seconds;
+    return time;
+  };
+
   const handlePlay = () => {
     let audio = document.getElementById("stereo");
     if (state.isSet) {
@@ -47,6 +55,9 @@ const Playbar = () => {
         audio.pause();
         dispatch({ type: SONG_PAUSED });
       } else {
+        let split = state.url.split("/");
+        audio.src = `https://docs.google.com/uc?export=open&id=${split[5]}`;
+        audio.currentTime = timeConvert();
         const playPromise = audio.play();
         if (playPromise !== undefined) {
           playPromise
@@ -215,7 +226,7 @@ const Playbar = () => {
       // Create moving progress bar
       const updateProgress = (e) => {
         const { currentTime, duration } = e.target;
-        console.log(currentTime, "current time", state.currTime, "state time");
+        // console.log(currentTime, "current time", state.currTime, "state time");
 
         if (progress && !state.isSeek && !state.progressMouseDown) {
           const progressPercent = (currentTime / duration) * 100;
@@ -445,7 +456,7 @@ const Playbar = () => {
 
     if (state ? state.isSet : false) {
       let split = state.url.split("/");
-      audio.src = `https://docs.google.com/uc?export=download&id=${split[5]}`;
+      audio.src = `https://docs.google.com/uc?export=open&id=${split[5]}`;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise
@@ -467,7 +478,7 @@ const Playbar = () => {
           state.isPlaying &&
           !state.progressMouseDown
         ) {
-          console.log(state.currTime, "state time 2");
+          // console.log(state.currTime, "state time 2");
           dispatch({ type: INCREMENT_TIME });
         } else if (
           state.currTime === state.duration &&
@@ -484,7 +495,7 @@ const Playbar = () => {
 
   return (
     <div className="playbar-container">
-      <audio id="stereo" />
+      <audio id="stereo" rel="noreferrer" />
       <div className="song-container">
         <audio id="stereo" />
         <Link to={`/artist/${state.artist}/playlist/${state.playlist}`}>

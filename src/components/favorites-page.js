@@ -77,7 +77,7 @@ const FavoritesPage = () => {
       }
       dispatch({ type: SONG_PLAYED });
     } else {
-      audio.src = `https://docs.google.com/uc?export=download&id=${split[5]}`;
+      audio.src = `https://docs.google.com/uc?export=open&id=${split[5]}`;
       dispatch({ type: SONG_PLAYED });
       dispatch({ type: CHANGE_LIST, payload: { songs: favoriteSongs } });
       dispatch({ type: SONG_CHANGED, payload: song });

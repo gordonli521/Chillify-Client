@@ -26,6 +26,7 @@
   width: 600px;
   margin-left: 15px;
   margin-right: 100px;
+  /* border: 1px solid blue; */
 }
 
 .playbar-volume {
@@ -44,6 +45,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  margin: 5px;
+  /* border: 1px solid red; */
 }
 
 .prev-btn,
@@ -54,6 +58,22 @@
   display: flex;
   font-size: 1.7rem;
   color: rgb(180, 180, 180);
+}
+
+.prev-btn:hover,
+.next-btn:hover,
+.volume-icon:hover,
+.shuffle-btn:hover,
+.repeat-btn:hover {
+  filter: brightness(150%);
+}
+
+.prev-btn {
+  margin-right: 20px;
+}
+
+.next-btn {
+  margin-left: 20px;
 }
 
 .shuffle-btn {
@@ -72,8 +92,18 @@
 }
 
 .play-pause-btn {
-  font-size: 2.3rem;
-  margin: 5px;
+  position: absolute;
+  font-size: 2.4rem;
+  /* margin: 5px; */
+  /* height: 100%; */
+  /* width: 30px; */
+  /* border: 1px solid red; */
+}
+
+.play-pause-btn:hover {
+  font-size: 2.5rem;
+  /* height: 40px; */
+  /* width: 40px; */
 }
 
 .song-picture {

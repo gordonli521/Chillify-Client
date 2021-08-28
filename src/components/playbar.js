@@ -448,13 +448,13 @@ const Playbar = () => {
       document.removeEventListener("mouseup", volumeMouseup);
       document.removeEventListener("mousemove", updateVolumeSeekProgress);
     };
-  }, [state.volumeMouseDown]);
+  }, [state.volumeMouseDown, state, dispatch]);
 
   // Change audio file if song changes
   useEffect(() => {
     let audio = document.getElementById("stereo");
 
-    if (state ? state.isSet : false) {
+    if (state.isSet) {
       let split = state.url.split("/");
       audio.src = `https://docs.google.com/uc?export=open&id=${split[5]}`;
       const playPromise = audio.play();
@@ -466,13 +466,13 @@ const Playbar = () => {
           });
       }
     }
-  }, [state.url]);
+  }, [state.url, state.isSet]);
 
   // Increment time in playbar
   useEffect(() => {
     const id = setTimeout(handleTime, 1000);
     function handleTime() {
-      if (state) {
+      if (state.isSet) {
         if (
           state.currTime < state.duration &&
           state.isPlaying &&
@@ -491,7 +491,14 @@ const Playbar = () => {
     }
 
     return () => clearTimeout(id);
-  }, [state.currTime, state.isPlaying, state.progressMouseDown]);
+  }, [
+    state.currTime,
+    state.isPlaying,
+    state.progressMouseDown,
+    state.isSet,
+    dispatch,
+    nextSong,
+  ]);
 
   return (
     <div className="playbar-container">
@@ -500,7 +507,7 @@ const Playbar = () => {
         <audio id="stereo" />
         <Link to={`/artist/${state.artist}/playlist/${state.playlist}`}>
           <div className="song-picture">
-            <img src={state ? state.image : ""} />
+            {state.isSet ? <img src={state.image} alt="playlist" /> : ""}
           </div>
         </Link>
         <div className="playbar-song-title-and-artist">

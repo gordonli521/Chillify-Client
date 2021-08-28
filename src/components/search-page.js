@@ -58,7 +58,7 @@ const SearchPage = () => {
         }
         return false;
       });
-      setArtists(filteredArtists);
+      return filteredArtists;
     } catch (err) {
       console.log(err);
     }
@@ -83,7 +83,7 @@ const SearchPage = () => {
         }
         return false;
       });
-      setSongs(filteredSongs);
+      return filteredSongs;
     } catch (err) {
       console.log(err);
     }
@@ -108,7 +108,7 @@ const SearchPage = () => {
         }
         return false;
       });
-      setPlaylists(filteredPlaylists);
+      return filteredPlaylists;
     } catch (err) {
       console.log(err);
     }
@@ -192,9 +192,6 @@ const SearchPage = () => {
     const wait = async () => {
       await checkJwtToken();
       setShowPlaybar(true);
-      await fetchArtists();
-      await fetchSongs();
-      await fetchPlaylists();
       let favorites = await fetchFavorites();
       setUserFavorites(favorites);
       setLoading(false);
@@ -203,41 +200,14 @@ const SearchPage = () => {
   }, []);
 
   useEffect(() => {
-    // const artistDisplay = document.querySelector(".filtered-artists-container");
-    // const songDisplay = document.querySelector(".filtered-songs-container");
-    // const playlistDisplay = document.querySelector(
-    //   ".filtered-playlists-container"
-    // );
-
-    // if (searchTerm.length > 0) {
-    //   artistDisplay.style.display = "none";
-    //   songDisplay.style.display = "none";
-    //   playlistDisplay.style.display = "none";
-    // }
-
     const wait = async () => {
       await checkJwtToken();
-      await fetchArtists();
-      // if (artists.length === 0) {
-      //   artistDisplay.style.display = "none";
-      // }
-      // if (artists.length > 0) {
-      //   artistDisplay.style.display = "block";
-      // }
-      await fetchSongs();
-      // if (songs.length === 0) {
-      //   songDisplay.style.display = "none";
-      // }
-      // if (songs.length > 0) {
-      //   songDisplay.style.display = "block";
-      // }
-      await fetchPlaylists();
-      // if (playlists.length === 0) {
-      //   playlistDisplay.style.display = "none";
-      // }
-      // if (playlists.length > 0) {
-      //   playlistDisplay.style.display = "block";
-      // }
+      let filteredArtists = await fetchArtists();
+      let filteredSongs = await fetchSongs();
+      let filteredPlaylists = await fetchPlaylists();
+      setArtists(filteredArtists);
+      setSongs(filteredSongs);
+      setPlaylists(filteredPlaylists);
     };
     wait();
   }, [searchTerm]);

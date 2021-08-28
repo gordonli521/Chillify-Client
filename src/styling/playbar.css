@@ -26,7 +26,6 @@
   width: 600px;
   margin-left: 15px;
   margin-right: 100px;
-  /* border: 1px solid blue; */
 }
 
 .playbar-volume {
@@ -47,7 +46,6 @@
   align-items: center;
   height: 100%;
   margin: 5px;
-  /* border: 1px solid red; */
 }
 
 .prev-btn,
@@ -94,16 +92,10 @@
 .play-pause-btn {
   position: absolute;
   font-size: 2.4rem;
-  /* margin: 5px; */
-  /* height: 100%; */
-  /* width: 30px; */
-  /* border: 1px solid red; */
 }
 
 .play-pause-btn:hover {
   font-size: 2.5rem;
-  /* height: 40px; */
-  /* width: 40px; */
 }
 
 .song-picture {

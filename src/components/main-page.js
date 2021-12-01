@@ -12,9 +12,9 @@ const MainPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    if (localStorage.getItem("token")) {
-      window.location = `${APP_URL}/home`;
-    }
+    // if (localStorage.getItem("token")) {
+    //   window.location = `${APP_URL}/home`;
+    // }
     setShowPlaybar(false);
     setLoading(false);
   }, [setShowPlaybar]);

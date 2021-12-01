@@ -66,9 +66,9 @@ const RegisterPage = ({ setRegisterSuccess }) => {
 
   useEffect(() => {
     setLoading(true);
-    if (localStorage.getItem("token")) {
-      window.location = `${APP_URL}/home`;
-    }
+    // if (localStorage.getItem("token")) {
+    //   window.location = `${APP_URL}/home`;
+    // }
     setShowPlaybar(false);
     setError("");
     setLoading(false);

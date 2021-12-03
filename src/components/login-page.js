@@ -75,7 +75,9 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
       }
     };
 
-    emailTyper();
+    setTimeout(() => {
+      emailTyper();
+    }, 100);
 
     let j = 0;
     const passwordTyper = () => {
@@ -88,7 +90,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
 
     setTimeout(() => {
       passwordTyper();
-    }, 1000);
+    }, 1100);
     setTimeout(() => {
       const fetchDemoLoginInfo = async () => {
         try {
@@ -116,7 +118,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
         }
       };
       fetchDemoLoginInfo();
-    }, 1700);
+    }, 1800);
   };
 
   useEffect(() => {

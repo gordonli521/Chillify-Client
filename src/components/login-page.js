@@ -67,7 +67,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
       if (i < demoEmail.length) {
         emailAddressInput.value += demoEmail[i];
         i++;
-        setTimeout(emailTyper, 100);
+        setTimeout(emailTyper, 50);
       }
     };
 
@@ -78,13 +78,13 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
       if (j < demoPassword.length) {
         passwordInput.value += demoPassword[j];
         j++;
-        setTimeout(passwordTyper, 100);
+        setTimeout(passwordTyper, 50);
       }
     };
 
     setTimeout(() => {
       passwordTyper();
-    }, 2200);
+    }, 1000);
     setTimeout(() => {
       const fetchDemoLoginInfo = async () => {
         try {
@@ -112,7 +112,7 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
         }
       };
       fetchDemoLoginInfo();
-    }, 3600);
+    }, 1700);
   };
 
   useEffect(() => {

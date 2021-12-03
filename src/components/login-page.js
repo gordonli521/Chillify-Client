@@ -55,6 +55,10 @@ const LoginPage = ({ setLoginSuccess, setError, error }) => {
 
   const handleDemoLogin = (e) => {
     e.preventDefault();
+
+    setEmailValue('');
+    setPasswordValue('');
+
     let demoEmail = "DemoEmail@demo.com";
     let demoPassword = "demoPassword";
 
